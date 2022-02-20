@@ -8,7 +8,7 @@ const EditTodo = ({ todo }) => {
         try {
             const body = { description };
             const response = await fetch(
-                `https://apiservertravalha.herokuapp.com:3333/todos/${todo.todo_id}`,
+                `http://187.85.170.204:3333/todos/${todo.todo_id}`,
                 {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },

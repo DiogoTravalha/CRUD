@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import axios from 'axios';
 
 import EditTodo from './EditTodo';
 
@@ -7,9 +8,7 @@ const ListTodo = () => {
 
     async function getTodos() {
         try {
-            const response = await fetch(
-                'https://apiservertravalha.herokuapp.com:3333/todos'
-            );
+            const response = await fetch('http://187.85.170.204:3333/todos');
             const jsonData = await response.json();
             setTodos(jsonData);
         } catch (error) {
@@ -20,7 +19,7 @@ const ListTodo = () => {
     async function deleteTodo(id) {
         try {
             const deleteTodo = await fetch(
-                `https://apiservertravalha.herokuapp.com:3333/todos/${id}`,
+                `http://187.85.170.204:3333/todos/${id}`,
                 {
                     method: 'DELETE',
                 }
